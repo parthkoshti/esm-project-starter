@@ -9,8 +9,7 @@ import { OTLPMetricExporter } from "@opentelemetry/exporter-metrics-otlp-proto";
 import { PeriodicExportingMetricReader } from "@opentelemetry/sdk-metrics";
 import { PinoInstrumentation } from "@opentelemetry/instrumentation-pino";
 
-const baseUrl =
-  process.env.SIGNOZ_OTEL_COLLECTOR_URL ?? "http://localhost:4318";
+const baseUrl = process.env.OTEL_COLLECTOR_URL ?? "http://localhost:4318";
 
 const sdk = new NodeSDK({
   resource: resourceFromAttributes({
